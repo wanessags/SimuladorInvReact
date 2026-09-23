@@ -1,16 +1,36 @@
-## Etapa 7 — Lógica de cálculo
+## Como executar
 
-A função calculateInvestmentResults fica em src/util/investment.js,
-separada dos componentes que exibem a interface.
+Com Node.js compatível com o Vite 8 instalado, execute na pasta do projeto:
 
-Ela retorna um array com um objeto por ano de investimento.
+```bash
+npm install
+npm run dev
+```
 
-No exemplo com investimento inicial de 1000, aporte anual de 100,
-taxa de 10% e duração de 2 anos:
+Abra no navegador o endereço indicado pelo terminal.
 
-- Ano 1: juros de 100 e saldo final de 1200.
-- Ano 2: juros de 120 e saldo final de 1420.
+## Compilação para produção
 
-O aporte é adicionado ao fim de cada ano.
+```bash
+npm run build
+```
 
-O formatter exibe os valores em USD, sem alterar o cálculo.
+Os arquivos de produção são gerados na pasta dist.
+
+## Funcionamento
+
+O simulador recebe investimento inicial, aporte anual, taxa de retorno
+e duração. A tabela atualiza automaticamente os resultados de cada ano,
+exibindo saldo, juros anuais, juros acumulados e capital investido em USD.
+
+Duração inferior a 1 oculta a tabela e exibe uma orientação.
+
+## Validação
+
+- Campos iniciais: 10000, 1200, 6 e 10.
+- Quantidade de linhas acompanha a duração.
+- Alterações nos campos atualizam os resultados.
+- Duração zero oculta a tabela; duração válida restaura os resultados.
+- Cenário 1000 / 100 / 10 / 2: saldos de $1,200 e $1,420.
+- Console sem erros ou avisos de key.
+- Compilação com Vite 8.3.0 concluída com sucesso.
